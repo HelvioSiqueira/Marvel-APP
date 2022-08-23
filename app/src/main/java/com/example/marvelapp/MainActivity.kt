@@ -2,10 +2,13 @@ package com.example.marvelapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.marvelapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var navHostFragment: NavHostFragment
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,5 +16,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+
+        initViews(binding)
+    }
+
+    private fun initViews(binding: ActivityMainBinding) {
+        navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+
+        val navControler = navHostFragment.navController
+
+        binding.bottonNavigation.apply {
+            setupWithNavController(navControler)
+        }
     }
 }

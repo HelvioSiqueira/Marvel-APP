@@ -41,7 +41,7 @@
         android:name="com.example.marvelapp.ui.details.DetailsCharacterFragment"
         android:label="DetailsCharacterFragment" >
         <argument
-            android:name="characterId"
+            android:name="character"
             app:argType="com.example.marvelapp.data.model.character.CharacterModel" />
     </fragment>
 
