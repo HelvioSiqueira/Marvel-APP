@@ -5,7 +5,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.marvelapp.databinding.FragmentSearchCharacterBinding
 import com.example.marvelapp.ui.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SearchCharacterFragment: BaseFragment<FragmentSearchCharacterBinding, SearchCharacterViewModel>() {
     override val viewModel: SearchCharacterViewModel by viewModels()
 
